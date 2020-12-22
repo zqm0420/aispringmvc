@@ -14,7 +14,20 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         $(function(){
-           alert(1);
+           var user = {
+               "id":1,
+               "name":"张三"
+           };
+           $.ajax({
+               url:"/data/json",
+               data:JSON.stringify(user),
+               type:"POST",
+               contentType:"application/json;charset=UTF-8",
+               dataType:"JSON",
+               success:function (data) {
+                    alert(data.id+"---"+data.name);
+               }
+           })
         });
     </script>
 </body>

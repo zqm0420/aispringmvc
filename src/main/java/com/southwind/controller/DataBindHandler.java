@@ -3,6 +3,7 @@ package com.southwind.controller;
 import com.southwind.entity.User;
 import com.southwind.entity.UserList;
 import com.southwind.entity.UserMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -57,5 +58,13 @@ public class DataBindHandler {
             str.append(user);
         }
         return str.toString();
+    }
+
+    @RequestMapping("json")
+    public User json(@RequestBody User user){
+        System.out.println(user);
+        user.setId(2);
+        user.setName("李四");
+        return user;
     }
 }
