@@ -2,6 +2,7 @@ package com.southwind.controller;
 
 import com.southwind.entity.User;
 import com.southwind.entity.UserList;
+import com.southwind.entity.UserMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,11 +34,26 @@ public class DataBindHandler {
         return id+"";
     }
 
+    /*
+    Spring MVC 不支持 List 类型的直接转换，需要对 List 集合进行包装。
+     */
     @RequestMapping("/list")
     public String list(UserList userList){
         StringBuffer str = new StringBuffer();
         for (User user :
                 userList.getUsers()) {
+            str.append(user);
+        }
+        return str.toString();
+    }
+
+    // Map类型
+    @RequestMapping("map")
+    public String map(UserMap users){
+        StringBuffer str = new StringBuffer();
+        for (String key :
+                users.getUsers().keySet()) {
+            User user = users.getUsers().get(key);
             str.append(user);
         }
         return str.toString();
