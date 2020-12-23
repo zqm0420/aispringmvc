@@ -21,6 +21,9 @@
         </property>
     </bean>
 
+    <!-- 配置上传组件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
     <mvc:annotation-driven conversion-service="conversionService">
         <!-- 消息转换器 -->
         <mvc:message-converters>

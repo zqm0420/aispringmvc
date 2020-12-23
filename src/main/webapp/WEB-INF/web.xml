@@ -38,4 +38,10 @@
     <servlet-name>default</servlet-name>
     <url-pattern>*.js</url-pattern>
   </servlet-mapping>
+
+  <!-- web.xml 添加如下配置，否则客户端无法访问 png -->
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
+  </servlet-mapping>
 </web-app>
