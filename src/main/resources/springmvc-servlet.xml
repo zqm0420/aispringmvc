@@ -45,4 +45,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 配置基于validator的验证器 -->
+<!--    <bean id="accountValidator" class="com.southwind.validator.AccountValidator"/>-->
+
+
 </beans>

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /*
- * @Controller 在类定义处添加，将该类交给 IoC 容器来管理（结合 springmvc.xml 的自动扫描配置使用），
+ * @Controller 在类定义处添加，将该类交给 IoC 容器来管理（结合 springmvc-servlet.xml 的自动扫描配置使用），
  * 同时使其成为一个控制器，可以接收客户端请求。该控制器的每一个业务方法的返回值都会交给视图解析器进行解析
  */
 @Controller
